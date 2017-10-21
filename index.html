@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<head>
+<title>
+</title>
+</head>
+
+<body>
+
+<body onload="load()">
+
+<div id = "container"></div>
+
+<div id = "clear"><button onclick = "clearBoard()">Clear Board</button></div>
+
+<script>
+
+function load() {
+
+let container = document.getElementById('container');
+
+const createSquare = function(number) {
+
+let total = (number * number);
+
+for (var i = 1; i < total+1; i++) {
+
+let square = document.createElement('div');
+	square.id = square[i];
+	square.className = "square";
+	square.setAttribute = ("id", "square")
+	let container = document.getElementById('container');
+	container.style.lineHeight = "0%";
+
+if (i % number === 0) {
+
+ 	square.style.width = (200 / number*2) + "px";
+	square.style.height = (200 / number*2) + "px";
+	square.style.backgroundColor = "lightgrey";
+	square.style.display = "inline-block";
+	square.style.whiteSpace= "nowrap";
+
+	document.body.appendChild(square);
+	container.appendChild(square);
+
+	let Break = document.createElement('BR');
+	container.insertBefore(Break, square[i]);
+
+	square.onmouseenter= function () {
+	changeColor()};
+
+function changeColor() {
+	var col = "rgb("
+	+ randomColor(255) + ","
+	+ randomColor(255) + ","
+	+ randomColor(255) + ")";
+
+	square.style.backgroundColor = col;
+
+	function randomColor(number) {
+		return Math.floor(Math.random() * number);
+	}
+	}
+}
+
+else {
+	square.style.width = (200 / number*2) + "px";
+	square.style.height = (200 / number*2) + "px";
+	square.style.backgroundColor = "lightgrey";
+	square.style.display = "inline-block";
+	square.style.whiteSpace= "nowrap";
+
+	document.body.appendChild(square);
+	container.appendChild(square);
+
+	square.onmouseenter= function () {
+	changeColor()};
+
+	function changeColor() {
+	var col = "rgb("
+	+ randomColor(255) + ","
+	+ randomColor(255) + ","
+	+ randomColor(255) + ")";
+
+	square.style.backgroundColor = col;
+
+	function randomColor(number) {
+		return Math.floor(Math.random() * number);
+	}
+	}
+
+}
+}
+}
+createSquare(16);
+}
+const clearBoard = function() {
+	let num = prompt("How many squares per side?", 16);
+
+	if (num === NaN) {
+		txt = "Please enter a number." 
+	}
+	else {
+
+		let container = document.getElementById("container");
+		while (container.hasChildNodes()) {
+			container.removeChild(container.firstChild);
+		}
+
+		let createSquare = function(number) {
+
+let total = (number * number);
+
+for (var i = 1; i < total+1; i++) {
+
+let square = document.createElement('div');
+	square.id = square[i];
+	square.className = "square";
+	square.setAttribute = ("id", "square")
+	let container = document.getElementById('container');
+	container.style.lineHeight = "0%";
+
+if (i % number === 0) {
+
+ 	square.style.width = (200 / number*2) + "px";
+	square.style.height = (200 / number*2) + "px";
+	square.style.backgroundColor = "lightgrey";
+	square.style.display = "inline-block";
+	square.style.whiteSpace= "nowrap";
+
+	document.body.appendChild(square);
+	container.appendChild(square);
+
+	let Break = document.createElement('BR');
+	container.insertBefore(Break, square[i]);
+
+	square.onmouseenter= function () {
+	changeColor()};
+
+function changeColor() {
+	var col = "rgb("
+	+ randomColor(255) + ","
+	+ randomColor(255) + ","
+	+ randomColor(255) + ")";
+
+	square.style.backgroundColor = col;
+
+	function randomColor(number) {
+		return Math.floor(Math.random() * number);
+	}
+	}
+}
+
+else {
+	square.style.width = (200 / number*2) + "px";
+	square.style.height = (200 / number*2) + "px";
+	square.style.backgroundColor = "lightgrey";
+	square.style.display = "inline-block";
+	square.style.whiteSpace= "nowrap";
+
+	document.body.appendChild(square);
+	container.appendChild(square);
+
+	square.onmouseenter= function () {
+	changeColor()};
+
+	function changeColor() {
+	var col = "rgb("
+	+ randomColor(255) + ","
+	+ randomColor(255) + ","
+	+ randomColor(255) + ")";
+
+	square.style.backgroundColor = col;
+
+	function randomColor(number) {
+		return Math.floor(Math.random() * number);
+	}
+	}
+
+}
+}
+}
+		createSquare(num);
+};
+}
+
+
+</script>
+
+</body>
